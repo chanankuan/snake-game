@@ -3,11 +3,11 @@ const coinSound = new Audio("../sounds/coin.mp3");
 const deadSound = new Audio("../sounds/dead.wav");
 const musicToggleBtn = document.getElementById("music-toggle");
 const scoreDisplay = document.querySelector(".score");
-const highScoreDisplau = document.querySelector(".high-score");
+const highScoreDisplay = document.querySelector(".high-score");
 const playBoard = document.querySelector(".play-board");
 const gameOverDisplay = document.querySelector(".game-over-box");
 let currentScore = 0,
-  highScore = 0;
+  highScore = Number(sessionStorage.getItem("highScore")) || 0;
 let foodX, foodY;
 let snakeX = 5,
   snakeY = 10;
@@ -32,10 +32,17 @@ musicToggleBtn.addEventListener("click", () => {
 const playGame = setInterval(initGame, 200);
 document.addEventListener("keydown", changeDirection);
 
+updateScoreTable();
 changeFoodPosition();
 
 function updateScoreTable() {
   scoreDisplay.innerHTML = `Score: ${currentScore}`;
+
+  if (currentScore > highScore) {
+    highScoreDisplay.innerHTML = `High Score: ${currentScore}`;
+  } else {
+    highScoreDisplay.innerHTML = `High Score: ${highScore}`;
+  }
 }
 
 function changeFoodPosition() {
@@ -113,6 +120,10 @@ function handleGameOver() {
   gameOver = true;
   gameOverDisplay.style.display = "flex";
   clearInterval(playGame);
+
+  if (currentScore > highScore) {
+    sessionStorage.setItem("highScore", currentScore);
+  }
 }
 
 function spaceBarPressed() {
