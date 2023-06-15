@@ -23,9 +23,9 @@ musicToggleBtn.addEventListener("click", () => {
   themeMusic.muted = !themeMusic.muted;
 
   if (themeMusic.muted) {
-    musicToggleBtn.querySelector("img").src = "../images/speaker-off.svg";
+    musicToggleBtn.querySelector("img").src = "./images/speaker-off.svg";
   } else {
-    musicToggleBtn.querySelector("img").src = "../images/speaker-on.svg";
+    musicToggleBtn.querySelector("img").src = "./images/speaker-on.svg";
   }
 });
 
