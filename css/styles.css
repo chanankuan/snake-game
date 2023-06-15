@@ -59,6 +59,8 @@ h1 {
 }
 
 .play-board .food {
+  width: 95%;
+  height: 95%;
   background-color: red;
 }
 
