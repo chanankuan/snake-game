@@ -18,7 +18,7 @@ let gameOver = false;
 let isStarted = false;
 
 // Turn on or off background music
-themeMusic.volume = 0;
+themeMusic.volume = 0.24;
 
 musicToggleBtn.addEventListener("click", () => {
   themeMusic.muted = !themeMusic.muted;
