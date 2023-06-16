@@ -1,6 +1,6 @@
 const themeMusic = document.getElementById("theme-sound");
-const coinSound = new Audio("../sounds/coin.mp3");
-const deadSound = new Audio("../sounds/dead.wav");
+const coinSound = new Audio("./sounds/coin.mp3");
+const deadSound = new Audio("./sounds/dead.wav");
 const musicToggleBtn = document.getElementById("music-toggle");
 const scoreDisplay = document.querySelector(".score");
 const highScoreDisplay = document.querySelector(".high-score");
