@@ -1,4 +1,3 @@
-const themeMusic = document.getElementById("theme-sound");
 const coinSound = new Audio("./sounds/coin.mp3");
 const deadSound = new Audio("./sounds/dead.wav");
 const musicToggleBtn = document.getElementById("music-toggle");
@@ -16,19 +15,6 @@ let velocityX = 0,
 let snakeBody = [];
 let gameOver = false;
 let isStarted = false;
-
-// Turn on or off background music
-themeMusic.volume = 0.24;
-
-musicToggleBtn.addEventListener("click", () => {
-  themeMusic.muted = !themeMusic.muted;
-
-  if (themeMusic.muted) {
-    musicToggleBtn.querySelector("img").src = "./images/speaker-off.svg";
-  } else {
-    musicToggleBtn.querySelector("img").src = "./images/speaker-on.svg";
-  }
-});
 
 document.addEventListener("keydown", changeDirection);
 
