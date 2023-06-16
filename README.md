@@ -1,1 +1,3 @@
-# snake-game
+# Snake Game
+
+This is non-commercial project
